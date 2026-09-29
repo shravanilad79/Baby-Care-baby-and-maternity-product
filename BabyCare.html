@@ -1,0 +1,2812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BabyCare - Baby & Maternity Products</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fffaf8;
+    color:#333;
+}
+
+/* ================= TOP BAR ================= */
+
+.top-bar{
+    background:#69bfa2;
+    color:white;
+    text-align:center;
+    padding:9px 15px;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    height:72px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 15px rgba(0,0,0,.06);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#ed8795;
+}
+
+.logo span{
+    color:#64b99e;
+}
+
+.nav-menu{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:#444;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-menu a:hover{
+    color:#ed8795;
+}
+
+.nav-icons{
+    display:flex;
+    gap:10px;
+}
+
+.nav-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    background:#fff3f1;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    position:relative;
+}
+
+.cart-badge{
+    position:absolute;
+    top:-3px;
+    right:-2px;
+    width:19px;
+    height:19px;
+    border-radius:50%;
+    background:#ed8795;
+    color:white;
+    font-size:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    width:88%;
+    margin:32px auto;
+    min-height:430px;
+    border-radius:28px;
+    background:linear-gradient(120deg,#fff0ed,#e6f8f1);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:50px 7%;
+    overflow:hidden;
+}
+
+.hero-content{
+    width:52%;
+}
+
+.hero-small{
+    color:#55a88d;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:49px;
+    line-height:1.1;
+    margin-bottom:20px;
+    color:#3e3e3e;
+}
+
+.hero h1 span{
+    color:#e98493;
+}
+
+.hero p{
+    color:#666;
+    line-height:1.7;
+    font-size:16px;
+    max-width:520px;
+    margin-bottom:25px;
+}
+
+.main-btn{
+    border:none;
+    background:#e98493;
+    color:white;
+    padding:14px 24px;
+    border-radius:9px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.main-btn:hover{
+    background:#d96f80;
+}
+
+.hero-photo{
+    width:390px;
+    height:330px;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.hero-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ================= COMMON ================= */
+
+.section{
+    width:88%;
+    margin:65px auto;
+}
+
+.section-heading{
+    margin-bottom:25px;
+}
+
+.section-heading h2{
+    font-size:29px;
+    margin-bottom:6px;
+}
+
+.section-heading p{
+    color:#777;
+}
+
+/* ================= CATEGORY ================= */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:16px;
+}
+
+.category{
+    background:white;
+    border:1px solid #eee;
+    padding:24px 10px;
+    text-align:center;
+    border-radius:16px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.category:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.category img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:12px;
+}
+
+.category h3{
+    font-size:14px;
+}
+
+/* ================= FILTER ================= */
+
+.filter-box{
+    background:#e8f7f1;
+    padding:22px;
+    border-radius:17px;
+    margin-bottom:25px;
+}
+
+.filter-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.filter-top h3{
+    color:#3e806d;
+    margin-bottom:5px;
+}
+
+.filter-top p{
+    color:#6b8e82;
+    font-size:13px;
+}
+
+.age-buttons{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.age-btn{
+    border:1px solid #9dd7c4;
+    background:white;
+    color:#478a75;
+    padding:9px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.age-btn.active,
+.age-btn:hover{
+    background:#63b99d;
+    color:white;
+}
+
+/* ================= SEARCH ================= */
+
+.search-row{
+    display:flex;
+    gap:12px;
+    margin-bottom:28px;
+}
+
+.search-row input{
+    flex:1;
+    height:47px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:9px;
+    padding:0 15px;
+    outline:none;
+}
+
+.search-row select{
+    width:190px;
+    border:1px solid #ddd;
+    border-radius:9px;
+    background:white;
+    padding:0 12px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product{
+    background:white;
+    border:1px solid #eee;
+    border-radius:17px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.product-img{
+    height:210px;
+    position:relative;
+    overflow:hidden;
+    background:#f5f5f5;
+}
+
+.product-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.35s;
+}
+
+.product:hover .product-img img{
+    transform:scale(1.05);
+}
+
+.heart{
+    position:absolute;
+    right:12px;
+    top:12px;
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    cursor:pointer;
+    font-size:18px;
+    z-index:2;
+}
+
+.heart.active{
+    color:#e77989;
+}
+
+.product-info{
+    padding:16px;
+}
+
+.age-tag{
+    display:inline-block;
+    font-size:11px;
+    color:#499379;
+    background:#eaf8f3;
+    padding:5px 8px;
+    border-radius:5px;
+    margin-bottom:9px;
+}
+
+.product-info h3{
+    font-size:16px;
+    margin-bottom:7px;
+}
+
+.rating{
+    color:#eda548;
+    font-size:13px;
+    margin-bottom:13px;
+}
+
+.product-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.price{
+    font-weight:bold;
+    font-size:18px;
+}
+
+.product-buttons{
+    display:flex;
+    gap:6px;
+}
+
+.add-cart,
+.view-btn{
+    border:none;
+    padding:9px 11px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.add-cart{
+    background:#e98493;
+    color:white;
+}
+
+.view-btn{
+    background:#edf7f3;
+    color:#4b927b;
+}
+
+/* ================= NO PRODUCTS ================= */
+
+.no-products{
+    display:none;
+    text-align:center;
+    padding:50px;
+    color:#777;
+    background:white;
+    border-radius:15px;
+}
+
+/* ================= REGISTRY ================= */
+
+.registry{
+    background:white;
+    border:1px solid #eee;
+    border-radius:23px;
+    padding:45px 25px;
+    text-align:center;
+}
+
+.registry-icon{
+    width:75px;
+    height:75px;
+    margin:auto auto 15px;
+    border-radius:50%;
+    background:#fff1ee;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+}
+
+.registry h2{
+    margin-bottom:10px;
+}
+
+.registry p{
+    max-width:620px;
+    margin:auto auto 20px;
+    color:#777;
+    line-height:1.7;
+}
+
+/* ================= SUBSCRIPTION ================= */
+
+.subscription{
+    background:linear-gradient(120deg,#e0f6ee,#fff0ed);
+    padding:38px;
+    border-radius:23px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.subscription h2{
+    margin-bottom:10px;
+}
+
+.subscription p{
+    color:#666;
+    line-height:1.6;
+}
+
+.subscribe-form{
+    display:flex;
+    gap:8px;
+}
+
+.subscribe-form input{
+    width:250px;
+    height:45px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:0 13px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#344945;
+    color:white;
+    padding:45px 6% 20px;
+    margin-top:60px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    margin-bottom:14px;
+}
+
+footer p,
+footer li{
+    color:#cbd8d4;
+    font-size:14px;
+    line-height:1.7;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin-bottom:7px;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.15);
+    margin-top:30px;
+    padding-top:18px;
+    font-size:12px;
+    color:#b9c9c4;
+}
+
+/* ================= CART ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    z-index:300;
+    display:none;
+}
+
+.overlay.show{
+    display:block;
+}
+
+.cart{
+    position:fixed;
+    right:-430px;
+    top:0;
+    width:410px;
+    max-width:92%;
+    height:100vh;
+    background:white;
+    z-index:400;
+    padding:22px;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.cart.open{
+    right:0;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:18px;
+    border-bottom:1px solid #eee;
+}
+
+.close{
+    border:none;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+    background:#f5f5f5;
+}
+
+.cart-items{
+    flex:1;
+    overflow:auto;
+    padding:15px 0;
+}
+
+.cart-item{
+    display:flex;
+    gap:10px;
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-item-img{
+    width:65px;
+    height:65px;
+    border-radius:8px;
+    object-fit:cover;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info h4{
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+.cart-price{
+    color:#e47f8d;
+    font-weight:bold;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:8px;
+}
+
+.qty-btn{
+    width:25px;
+    height:25px;
+    border:none;
+    background:#edf7f3;
+    color:#438873;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.remove{
+    border:none;
+    background:none;
+    color:#d66d78;
+    cursor:pointer;
+    font-size:11px;
+    margin-top:7px;
+}
+
+.cart-footer{
+    border-top:1px solid #ddd;
+    padding-top:18px;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:19px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.checkout{
+    width:100%;
+}
+
+/* ================= MODAL ================= */
+
+.modal-bg{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:600;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-bg.show{
+    display:flex;
+}
+
+.modal{
+    background:white;
+    width:500px;
+    max-width:100%;
+    border-radius:18px;
+    padding:25px;
+    position:relative;
+}
+
+.modal-close{
+    position:absolute;
+    right:18px;
+    top:18px;
+    border:none;
+    background:#f5f5f5;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.modal h2{
+    margin-bottom:18px;
+}
+
+.modal input,
+.modal textarea{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:12px;
+    margin-bottom:12px;
+    outline:none;
+}
+
+.modal textarea{
+    height:100px;
+    resize:none;
+}
+
+/* QUICK VIEW */
+
+.quick-view{
+    display:flex;
+    gap:22px;
+}
+
+.quick-view img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.quick-view-info{
+    flex:1;
+}
+
+.quick-view-info h2{
+    margin-top:10px;
+}
+
+.quick-price{
+    font-size:23px;
+    font-weight:bold;
+    margin:12px 0;
+    color:#e47f8d;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translate(-50%,80px);
+    background:#344945;
+    color:white;
+    padding:13px 20px;
+    border-radius:8px;
+    opacity:0;
+    transition:.3s;
+    z-index:1000;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .nav-menu{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        gap:30px;
+        text-align:center;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-photo{
+        width:320px;
+        height:250px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .filter-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .subscription{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:0 4%;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .section{
+        width:92%;
+    }
+
+    .hero{
+        width:92%;
+        padding:35px 20px;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero-photo{
+        width:100%;
+        height:230px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .product-img{
+        height:155px;
+    }
+
+    .product-info{
+        padding:12px;
+    }
+
+    .product-info h3{
+        font-size:14px;
+    }
+
+    .product-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .search-row{
+        flex-direction:column;
+    }
+
+    .search-row select{
+        width:100%;
+        height:45px;
+    }
+
+    .subscribe-form{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .subscribe-form input{
+        width:100%;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .quick-view{
+        flex-direction:column;
+    }
+
+    .quick-view img{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    Free shipping on orders above ₹999 • Gentle care for every little one
+</div>
+
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">
+        Baby<span>Care</span>
+    </div>
+
+    <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#registry">Gift Registry</a></li>
+        <li><a href="#subscription">Subscribe</a></li>
+    </ul>
+
+    <div class="nav-icons">
+
+        <button class="nav-btn" onclick="showWishlist()">
+            ♡
+        </button>
+
+        <button class="nav-btn" onclick="openCart()">
+            🛒
+            <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            MADE FOR LITTLE MOMENTS
+        </div>
+
+        <h1>
+            Everything your
+            <span>little one</span>
+            needs.
+        </h1>
+
+        <p>
+            Discover carefully selected baby and maternity essentials
+            for feeding, clothing, playtime, care and everyday comfort.
+        </p>
+
+        <button class="main-btn" onclick="scrollToProducts()">
+            Shop Products →
+        </button>
+
+    </div>
+
+    <div class="hero-photo">
+
+        <img
+        src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=85"
+        alt="Baby">
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+
+    <div class="section-heading">
+
+        <h2>Shop by Category</h2>
+
+        <p>
+            Everything you need for your baby and maternity journey.
+        </p>
+
+    </div>
+
+    <div class="categories">
+
+        <div class="category" onclick="setCategory('Baby Care')">
+
+            <img
+            src="https://images.unsplash.com/photo-1556229010-aa3b3f2c0d0b?auto=format&fit=crop&w=300&q=80">
+
+            <h3>Baby Care</h3>
+
+        </div>
+
+
+        <div class="category" onclick="setCategory('Clothing')">
+
+            <img
+            src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=300&q=80">
+
+            <h3>Baby Clothing</h3>
+
+        </div>
+
+
+        <div class="category" onclick="setCategory('Toys')">
+
+            <img
+            src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=300&q=80">
+
+            <h3>Toys & Play</h3>
+
+        </div>
+
+
+        <div class="category" onclick="setCategory('Maternity')">
+
+            <img
+            src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=300&q=80">
+
+            <h3>Maternity</h3>
+
+        </div>
+
+
+        <div class="category" onclick="setCategory('Feeding')">
+
+            <img
+            src="https://images.unsplash.com/photo-1584839404042-8bc21d240f2a?auto=format&fit=crop&w=300&q=80">
+
+            <h3>Feeding</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+
+    <div class="section-heading">
+
+        <h2>Baby Essentials</h2>
+
+        <p>
+            Find the right products for every stage.
+        </p>
+
+    </div>
+
+
+    <!-- AGE FILTER -->
+
+    <div class="filter-box">
+
+        <div class="filter-top">
+
+            <div>
+
+                <h3>Shop by Baby Age</h3>
+
+                <p>
+                    Choose an age group to discover suitable products.
+                </p>
+
+            </div>
+
+
+            <div class="age-buttons">
+
+                <button class="age-btn active"
+                onclick="setAge('All',this)">
+                    All
+                </button>
+
+                <button class="age-btn"
+                onclick="setAge('0-6 Months',this)">
+                    0–6 Months
+                </button>
+
+                <button class="age-btn"
+                onclick="setAge('6-12 Months',this)">
+                    6–12 Months
+                </button>
+
+                <button class="age-btn"
+                onclick="setAge('1-2 Years',this)">
+                    1–2 Years
+                </button>
+
+                <button class="age-btn"
+                onclick="setAge('2+ Years',this)">
+                    2+ Years
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-row">
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Search baby products..."
+        oninput="filterProducts()">
+
+        <select id="sortSelect" onchange="sortProducts()">
+
+            <option value="default">
+                Sort by
+            </option>
+
+            <option value="low">
+                Price: Low to High
+            </option>
+
+            <option value="high">
+                Price: High to Low
+            </option>
+
+            <option value="name">
+                Name A-Z
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- PRODUCT GRID -->
+
+    <div class="products" id="productGrid">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product"
+        data-name="Soft Baby Blanket"
+        data-category="Baby Care"
+        data-age="0-6 Months"
+        data-price="799">
+
+            <div class="product-img">
+
+                <button class="heart"
+                onclick="toggleWishlist(this,'Soft Baby Blanket')">
+                    ♡
+                </button>
+
+                <img
+                src="https://images.unsplash.com/photo-1599443015574-bf9c5f1f1b1d?auto=format&fit=crop&w=600&q=85"
+                alt="Baby blanket">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="age-tag">
+                    0–6 Months
+                </span>
+
+                <h3>
+                    Soft Baby Blanket
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span style="color:#888">(32)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹799
+                    </div>
+
+                    <div class="product-buttons">
+
+                        <button class="view-btn"
+                        onclick="quickView(this)">
+                            View
+                        </button>
+
+                        <button class="add-cart"
+                        onclick="addToCart(this)">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product"
+        data-name="Baby Feeding Bottle"
+        data-category="Feeding"
+        data-age="0-6 Months"
+        data-price="499">
+
+            <div class="product-img">
+
+                <button class="heart"
+                onclick="toggleWishlist(this,'Baby Feeding Bottle')">
+                    ♡
+                </button>
+
+                <img
+                src="https://images.unsplash.com/photo-1584839404042-8bc21d240f2a?auto=format&fit=crop&w=600&q=85"
+                alt="Baby feeding bottle">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="age-tag">
+                    0–6 Months
+                </span>
+
+                <h3>
+                    Baby Feeding Bottle
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span style="color:#888">(28)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹499
+                    </div>
+
+                    <div class="product-buttons">
+
+                        <button class="view-btn"
+                        onclick="quickView(this)">
+                            View
+                        </button>
+
+                        <button class="add-cart"
+                        onclick="addToCart(this)">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product"
+        data-name="Cotton Baby Romper"
+        data-category="Clothing"
+        data-age="6-12 Months"
+        data-price="649">
+
+            <div class="product-img">
+
+                <button class="heart"
+                onclick="toggleWishlist(this,'Cotton Baby Romper')">
+                    ♡
+                </button>
+
+                <img
+                src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=85"
+                alt="Baby clothing">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="age-tag">
+                    6–12 Months
+                </span>
+
+                <h3>
+                    Cotton Baby Romper
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span style="color:#888">(21)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹649
+                    </div>
+
+                    <div class="product-buttons">
+
+                        <button class="view-btn"
+                        onclick="quickView(this)">
+                            View
+                        </button>
+
+                        <button class="add-cart"
+                        onclick="addToCart(this)">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product"
+        data-name="Soft Teddy Bear"
+        data-category="Toys"
+        data-age="6-12 Months"
+        data-price="599">
+
+            <div class="product-img">
+
+                <button class="heart"
+                onclick="toggleWishlist(this,'Soft Teddy Bear')">
+                    ♡
+                </button>
+
+                <img
+                src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=600&q=85"
+                alt="Baby toy">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="age-tag">
+                    6–12 Months
+                </span>
+
+                <h3>
+                    Soft Teddy Bear
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span style="color:#888">(44)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹599
+                    </div>
+
+                    <div class="product-buttons">
+
+                        <button class="view-btn"
+                        onclick="quickView(this)">
+                            View
+                        </button>
+
+                        <button class="add-cart"
+                        onclick="addToCart(this)">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product"
+        data-name="Learning Activity Toy"
+        data-category="Toys"
+        data-age="1-2 Years"
+        data-price="899">
+
+            <div class="product-img">
+
+                <button class="heart"
+                onclick="toggleWishlist(this,'Learning Activity Toy')">
+                    ♡
+                </button>
+
+                <img
+                src="https://images.unsplash.com/photo-1560961911-ba7ef651a56c?auto=format&fit=crop&w=600&q=85"
+                alt="Learning toy">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="age-tag">
+                    1–2 Years
+                </span>
+
+                <h3>
+                    Learning Activity Toy
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span style="color:#888">(36)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹899
+                    </div>
+
+                    <div class="product-buttons">
+
+                        <button class="view-btn"
+                        onclick="quickView(this)">
+                            View
+                        </button>
+
+                        <button class="add-cart"
+                        onclick="addToCart(this)">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product"
+        data-name="Baby Feeding Set"
+        data-category="Feeding"
+        data-age="1-2 Years"
+        data-price="749">
+
+            <div class="product-img">
+
+                <button class="heart"
+                onclick="toggleWishlist(this,'Baby Feeding Set')">
+                    ♡
+                </button>
+
+                <img
+                src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=85"
+                alt="Baby feeding set">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="age-tag">
+                    1–2 Years
+                </span>
+
+                <h3>
+                    Baby Feeding Set
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span style="color:#888">(19)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹749
+                    </div>
+
+                    <div class="product-buttons">
+
+                        <button class="view-btn"
+                        onclick="quickView(this)">
+                            View
+                        </button>
+
+                        <button class="add-cart"
+                        onclick="addToCart(this)">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+
+        <div class="product"
+        data-name="Kids Winter Jacket"
+        data-category="Clothing"
+        data-age="2+ Years"
+        data-price="1299">
+
+            <div class="product-img">
+
+                <button class="heart"
+                onclick="toggleWishlist(this,'Kids Winter Jacket')">
+                    ♡
+                </button>
+
+                <img
+                src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=85"
+                alt="Kids clothing">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="age-tag">
+                    2+ Years
+                </span>
+
+                <h3>
+                    Kids Winter Jacket
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span style="color:#888">(17)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹1,299
+                    </div>
+
+                    <div class="product-buttons">
+
+                        <button class="view-btn"
+                        onclick="quickView(this)">
+                            View
+                        </button>
+
+                        <button class="add-cart"
+                        onclick="addToCart(this)">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+
+        <div class="product"
+        data-name="Kids Building Blocks"
+        data-category="Toys"
+        data-age="2+ Years"
+        data-price="999">
+
+            <div class="product-img">
+
+                <button class="heart"
+                onclick="toggleWishlist(this,'Kids Building Blocks')">
+                    ♡
+                </button>
+
+                <img
+                src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?auto=format&fit=crop&w=600&q=85"
+                alt="Building blocks">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="age-tag">
+                    2+ Years
+                </span>
+
+                <h3>
+                    Kids Building Blocks
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span style="color:#888">(51)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹999
+                    </div>
+
+                    <div class="product-buttons">
+
+                        <button class="view-btn"
+                        onclick="quickView(this)">
+                            View
+                        </button>
+
+                        <button class="add-cart"
+                        onclick="addToCart(this)">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 9 -->
+
+        <div class="product"
+        data-name="Maternity Comfort Wear"
+        data-category="Maternity"
+        data-age="All"
+        data-price="1099">
+
+            <div class="product-img">
+
+                <button class="heart"
+                onclick="toggleWishlist(this,'Maternity Comfort Wear')">
+                    ♡
+                </button>
+
+                <img
+                src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=600&q=85"
+                alt="Maternity product">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="age-tag">
+                    Maternity
+                </span>
+
+                <h3>
+                    Maternity Comfort Wear
+                </h3>
+
+                <div class="rating">
+                    ★★★★★
+                    <span style="color:#888">(25)</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹1,099
+                    </div>
+
+                    <div class="product-buttons">
+
+                        <button class="view-btn"
+                        onclick="quickView(this)">
+                            View
+                        </button>
+
+                        <button class="add-cart"
+                        onclick="addToCart(this)">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="no-products" id="noProducts">
+
+        <h3>No products found</h3>
+
+        <p style="margin-top:8px;">
+            Try another search or filter.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- GIFT REGISTRY -->
+
+<section class="section" id="registry">
+
+    <div class="registry">
+
+        <div class="registry-icon">
+            🎁
+        </div>
+
+        <h2>
+            Create a Baby Gift Registry
+        </h2>
+
+        <p>
+            Create a wishlist for your little one and share it
+            with family and friends for birthdays, baby showers
+            and special occasions.
+        </p>
+
+        <button class="main-btn" onclick="openRegistry()">
+            Create Registry
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SUBSCRIPTION -->
+
+<section class="section" id="subscription">
+
+    <div class="subscription">
+
+        <div>
+
+            <h2>
+                Never run out of baby essentials
+            </h2>
+
+            <p>
+                Subscribe to your everyday essentials and receive
+                them automatically.
+            </p>
+
+        </div>
+
+        <div class="subscribe-form">
+
+            <input
+            type="email"
+            id="email"
+            placeholder="Enter your email">
+
+            <button class="main-btn"
+            onclick="subscribe()">
+                Subscribe
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>BabyCare</h3>
+
+            <p>
+                Thoughtfully selected baby and maternity essentials
+                for every stage of your parenting journey.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Shop</h3>
+
+            <ul>
+                <li>Baby Care</li>
+                <li>Baby Clothing</li>
+                <li>Toys & Play</li>
+                <li>Feeding</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>Services</h3>
+
+            <ul>
+                <li>Gift Registry</li>
+                <li>Subscriptions</li>
+                <li>Order Tracking</li>
+                <li>Customer Support</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <ul>
+                <li>hello@babycare.com</li>
+                <li>+91 98765 43210</li>
+                <li>India</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 BabyCare. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<!-- CART -->
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<div class="cart" id="cart">
+
+    <div class="cart-header">
+
+        <h2>
+            Your Cart
+        </h2>
+
+        <button class="close"
+        onclick="closeCart()">
+            ✕
+        </button>
+
+    </div>
+
+
+    <div class="cart-items" id="cartItems">
+
+        <p style="text-align:center;color:#777;margin-top:30px;">
+            Your cart is empty.
+        </p>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="total">
+
+            <span>Total</span>
+
+            <span id="cartTotal">
+                ₹0
+            </span>
+
+        </div>
+
+        <button class="main-btn checkout"
+        onclick="checkout()">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- REGISTRY MODAL -->
+
+<div class="modal-bg" id="registryModal">
+
+    <div class="modal">
+
+        <button class="modal-close"
+        onclick="closeRegistry()">
+            ✕
+        </button>
+
+        <h2>
+            Create Your Gift Registry 🎁
+        </h2>
+
+        <input
+        type="text"
+        id="registryName"
+        placeholder="Your name">
+
+        <input
+        type="email"
+        id="registryEmail"
+        placeholder="Email address">
+
+        <input
+        type="text"
+        id="registryEvent"
+        placeholder="Event name">
+
+        <textarea
+        id="registryMessage"
+        placeholder="Tell us about your registry..."></textarea>
+
+        <button class="main-btn"
+        onclick="createRegistry()">
+            Create Registry
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- QUICK VIEW MODAL -->
+
+<div class="modal-bg" id="quickModal">
+
+    <div class="modal">
+
+        <button class="modal-close"
+        onclick="closeQuickView()">
+            ✕
+        </button>
+
+        <div class="quick-view">
+
+            <img id="quickImage">
+
+            <div class="quick-view-info">
+
+                <span class="age-tag" id="quickAge">
+                </span>
+
+                <h2 id="quickName">
+                </h2>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="quick-price"
+                id="quickPrice">
+                </div>
+
+                <p style="color:#777;line-height:1.6;">
+                    Carefully selected for your little one's
+                    everyday comfort and needs.
+                </p>
+
+                <br>
+
+                <button class="main-btn"
+                id="quickAdd">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+let cart = [];
+
+let wishlist = [];
+
+let selectedAge = "All";
+
+let selectedCategory = "All";
+
+let toastTimer;
+
+
+/* ==========================================
+   SCROLL
+========================================== */
+
+function scrollToProducts(){
+
+    document.getElementById("products")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ==========================================
+   CATEGORY FILTER
+========================================== */
+
+function setCategory(category){
+
+    selectedCategory = category;
+
+    selectedAge = "All";
+
+    document.querySelectorAll(".age-btn")
+    .forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    document.querySelector(".age-btn")
+    .classList.add("active");
+
+    document.getElementById("products")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+    filterProducts();
+
+    showToast(
+        category + " products"
+    );
+
+}
+
+
+/* ==========================================
+   AGE FILTER
+========================================== */
+
+function setAge(age, button){
+
+    selectedAge = age;
+
+    selectedCategory = "All";
+
+    document.querySelectorAll(".age-btn")
+    .forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    filterProducts();
+
+}
+
+
+/* ==========================================
+   PRODUCT FILTER
+========================================== */
+
+function filterProducts(){
+
+    const search =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const products =
+        document.querySelectorAll(".product");
+
+    let visible = 0;
+
+    products.forEach(product=>{
+
+        const name =
+            product.dataset.name.toLowerCase();
+
+        const category =
+            product.dataset.category;
+
+        const age =
+            product.dataset.age;
+
+        const matchesSearch =
+            name.includes(search);
+
+        const matchesCategory =
+            selectedCategory === "All" ||
+            category === selectedCategory;
+
+        const matchesAge =
+            selectedAge === "All" ||
+            age === selectedAge ||
+            age === "All";
+
+        if(
+            matchesSearch &&
+            matchesCategory &&
+            matchesAge
+        ){
+
+            product.style.display = "";
+
+            visible++;
+
+        }else{
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("noProducts")
+    .style.display =
+        visible === 0 ? "block" : "none";
+
+}
+
+
+/* ==========================================
+   SORT
+========================================== */
+
+function sortProducts(){
+
+    const grid =
+        document.getElementById("productGrid");
+
+    const products =
+        Array.from(
+            grid.querySelectorAll(".product")
+        );
+
+    const type =
+        document.getElementById("sortSelect")
+        .value;
+
+    if(type === "low"){
+
+        products.sort((a,b)=>
+            Number(a.dataset.price) -
+            Number(b.dataset.price)
+        );
+
+    }
+
+    else if(type === "high"){
+
+        products.sort((a,b)=>
+            Number(b.dataset.price) -
+            Number(a.dataset.price)
+        );
+
+    }
+
+    else if(type === "name"){
+
+        products.sort((a,b)=>
+            a.dataset.name.localeCompare(
+                b.dataset.name
+            )
+        );
+
+    }
+
+    products.forEach(product=>{
+        grid.appendChild(product);
+    });
+
+}
+
+
+/* ==========================================
+   ADD TO CART
+========================================== */
+
+function addToCart(button){
+
+    const product =
+        button.closest(".product");
+
+    const name =
+        product.dataset.name;
+
+    const price =
+        Number(product.dataset.price);
+
+    const image =
+        product.querySelector("img").src;
+
+
+    const existing =
+        cart.find(item=>item.name === name);
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            image:image,
+            quantity:1
+        });
+
+    }
+
+
+    updateCart();
+
+    showToast(
+        name + " added to cart"
+    );
+
+}
+
+
+/* ==========================================
+   CART UPDATE
+========================================== */
+
+function updateCart(){
+
+    const count =
+        cart.reduce(
+            (sum,item)=>
+                sum + item.quantity,
+            0
+        );
+
+    document.getElementById("cartCount")
+    .innerText = count;
+
+
+    const container =
+        document.getElementById("cartItems");
+
+
+    if(cart.length === 0){
+
+        container.innerHTML = `
+            <p style="
+                text-align:center;
+                color:#777;
+                margin-top:30px;
+            ">
+                Your cart is empty.
+            </p>
+        `;
+
+        document.getElementById("cartTotal")
+        .innerText = "₹0";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    container.innerHTML = "";
+
+
+    cart.forEach((item,index)=>{
+
+        total +=
+            item.price * item.quantity;
+
+
+        container.innerHTML += `
+
+            <div class="cart-item">
+
+                <img
+                class="cart-item-img"
+                src="${item.image}">
+
+                <div class="cart-item-info">
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+                    <div class="cart-price">
+                        ₹${item.price}
+                    </div>
+
+                    <div class="quantity">
+
+                        <button
+                        class="qty-btn"
+                        onclick="changeQuantity(${index},-1)">
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                        class="qty-btn"
+                        onclick="changeQuantity(${index},1)">
+                            +
+                        </button>
+
+                    </div>
+
+                    <button
+                    class="remove"
+                    onclick="removeCart(${index})">
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("cartTotal")
+    .innerText =
+        "₹" + total.toLocaleString("en-IN");
+
+}
+
+
+/* ==========================================
+   QUANTITY
+========================================== */
+
+function changeQuantity(index,change){
+
+    cart[index].quantity += change;
+
+    if(cart[index].quantity <= 0){
+
+        cart.splice(index,1);
+
+    }
+
+    updateCart();
+
+}
+
+
+/* ==========================================
+   REMOVE CART
+========================================== */
+
+function removeCart(index){
+
+    const name =
+        cart[index].name;
+
+    cart.splice(index,1);
+
+    updateCart();
+
+    showToast(
+        name + " removed"
+    );
+
+}
+
+
+/* ==========================================
+   OPEN CART
+========================================== */
+
+function openCart(){
+
+    document.getElementById("cart")
+    .classList.add("open");
+
+    document.getElementById("overlay")
+    .classList.add("show");
+
+}
+
+
+/* ==========================================
+   CLOSE CART
+========================================== */
+
+function closeCart(){
+
+    document.getElementById("cart")
+    .classList.remove("open");
+
+    document.getElementById("overlay")
+    .classList.remove("show");
+
+}
+
+
+/* ==========================================
+   WISHLIST
+========================================== */
+
+function toggleWishlist(button,name){
+
+    button.classList.toggle("active");
+
+
+    if(button.classList.contains("active")){
+
+        button.innerText = "♥";
+
+        if(!wishlist.includes(name)){
+            wishlist.push(name);
+        }
+
+        showToast(
+            name + " added to wishlist"
+        );
+
+    }else{
+
+        button.innerText = "♡";
+
+        wishlist =
+            wishlist.filter(
+                item=>item !== name
+            );
+
+        showToast(
+            name + " removed from wishlist"
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   SHOW WISHLIST
+========================================== */
+
+function showWishlist(){
+
+    if(wishlist.length === 0){
+
+        showToast(
+            "Your wishlist is empty"
+        );
+
+        return;
+
+    }
+
+    alert(
+        "Your Wishlist:\n\n" +
+        wishlist.join("\n")
+    );
+
+}
+
+
+/* ==========================================
+   QUICK VIEW
+========================================== */
+
+function quickView(button){
+
+    const product =
+        button.closest(".product");
+
+    const name =
+        product.dataset.name;
+
+    const price =
+        product.dataset.price;
+
+    const age =
+        product.dataset.age;
+
+    const image =
+        product.querySelector("img").src;
+
+
+    document.getElementById("quickImage")
+    .src = image;
+
+    document.getElementById("quickName")
+    .innerText = name;
+
+    document.getElementById("quickPrice")
+    .innerText =
+        "₹" + Number(price).toLocaleString("en-IN");
+
+    document.getElementById("quickAge")
+    .innerText =
+        age === "All" ? "Maternity" : age;
+
+
+    document.getElementById("quickAdd")
+    .onclick = function(){
+
+        addToCartFromQuick(
+            name,
+            Number(price),
+            image
+        );
+
+    };
+
+
+    document.getElementById("quickModal")
+    .classList.add("show");
+
+}
+
+
+/* ==========================================
+   QUICK ADD
+========================================== */
+
+function addToCartFromQuick(
+    name,
+    price,
+    image
+){
+
+    const existing =
+        cart.find(item=>item.name === name);
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            image:image,
+            quantity:1
+        });
+
+    }
+
+
+    updateCart();
+
+    closeQuickView();
+
+    showToast(
+        name + " added to cart"
+    );
+
+}
+
+
+/* ==========================================
+   CLOSE QUICK VIEW
+========================================== */
+
+function closeQuickView(){
+
+    document.getElementById("quickModal")
+    .classList.remove("show");
+
+}
+
+
+/* ==========================================
+   REGISTRY
+========================================== */
+
+function openRegistry(){
+
+    document.getElementById("registryModal")
+    .classList.add("show");
+
+}
+
+
+function closeRegistry(){
+
+    document.getElementById("registryModal")
+    .classList.remove("show");
+
+}
+
+
+function createRegistry(){
+
+    const name =
+        document.getElementById("registryName")
+        .value
+        .trim();
+
+    const email =
+        document.getElementById("registryEmail")
+        .value
+        .trim();
+
+
+    if(name === "" || email === ""){
+
+        showToast(
+            "Please enter your name and email"
+        );
+
+        return;
+
+    }
+
+
+    closeRegistry();
+
+    showToast(
+        "Gift registry created successfully 🎁"
+    );
+
+
+    document.getElementById("registryName")
+    .value = "";
+
+    document.getElementById("registryEmail")
+    .value = "";
+
+    document.getElementById("registryEvent")
+    .value = "";
+
+    document.getElementById("registryMessage")
+    .value = "";
+
+}
+
+
+/* ==========================================
+   SUBSCRIBE
+========================================== */
+
+function subscribe(){
+
+    const email =
+        document.getElementById("email")
+        .value
+        .trim();
+
+
+    if(email === ""){
+
+        showToast(
+            "Please enter your email"
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !email.includes("@") ||
+        !email.includes(".")
+    ){
+
+        showToast(
+            "Please enter a valid email"
+        );
+
+        return;
+
+    }
+
+
+    document.getElementById("email")
+    .value = "";
+
+
+    showToast(
+        "Subscription successful 🎉"
+    );
+
+}
+
+
+/* ==========================================
+   CHECKOUT
+========================================== */
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        showToast(
+            "Your cart is empty"
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "Thank you for shopping with BabyCare!\n\n" +
+        "Checkout integration can be connected here."
+    );
+
+}
+
+
+/* ==========================================
+   TOAST
+========================================== */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+
+    clearTimeout(toastTimer);
+
+
+    toastTimer =
+        setTimeout(()=>{
+
+            toast.classList.remove("show");
+
+        },2500);
+
+}
+
+</script>
+
+</body>
+</html>
